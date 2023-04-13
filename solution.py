@@ -8,4 +8,12 @@ def solution(x: np.array) -> bool: # Одна или две выборке на 
     # Измените код этой функции
     # Это будет вашим решением
     # Не меняйте название функции и её аргументы
-    return ... # Ваш ответ, True или False
+    threshold = -300
+    t_stat, p_val = stats.ttest_1samp(npv, threshold)
+    if p_val < 0.04:
+        #print("Отклоняем нулевую гипотезу")
+        return True
+    else:
+        return False
+        #print("Не отклоняем нулевую гипотезу")
+    #return ... # Ваш ответ, True или False
