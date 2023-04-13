@@ -12,8 +12,8 @@ def solution(x: np.array) -> bool: # Одна или две выборке на 
     t_stat, p_val = stats.ttest_1samp(x, threshold)
     if p_val < 0.04:
         #print("Отклоняем нулевую гипотезу")
-        return True
-    else:
         return False
+    else:
+        return True
         #print("Не отклоняем нулевую гипотезу")
     #return ... # Ваш ответ, True или False
